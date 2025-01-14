@@ -8,6 +8,7 @@ async function getAll(request, response) {
         console.error(`Erro ao buscar os clientes. ${error}`)
         return response.status(400).json({erro: "Erro interno ao ao processar a requisição"})
     }
+    connection.end();
 }
 
 module.exports = { getAll }
