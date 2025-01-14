@@ -1,11 +1,17 @@
 const express = require("express")
-const router = require("./router/router.js")
+const router = ("../router/router")
 const app = express()
-
 app.use(router)
 
-app.listen(3000, () => {
-    console.log("Server rodando na porta 3000")
-})
+function ligarServidor() {
+    try {
+        app.listen(3000, () => {
+            console.log("Servidor ONLINE - rodando na porta 3000.")
+        })
+    } catch (error) {
+        console.error(`Falha ao iniciar o servidor: ${error}`)
+    }
+}
+ligarServidor()
 
 module.exports = app
