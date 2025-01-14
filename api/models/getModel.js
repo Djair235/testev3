@@ -2,7 +2,7 @@ const connection = require("../db/database")
 
 async function getAll(request, response) {
     try {
-        const [rows] = await connection.execute("SELECT * from CLIENTES")
+        const [rows] = await connection.execute("SELECT * from clientes")
         return response.status(200).json(rows)
     } catch (error) {
         console.error(`Erro ao buscar os clientes. ${error}`)
